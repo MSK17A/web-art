@@ -25,7 +25,8 @@ submitted to `/ascii-art`. the server works by parsing HTML templates presented 
 3. `400 Bad Request`, for incorrect requests.
 4. `500 Internal Server Error`, for any unhandled errors.
 
-<hr>
+
+
 
 <h2>This version has a Dockerfile that can be used to build and run a containerized image of this project</h2>
 
@@ -38,8 +39,10 @@ submitted to `/ascii-art`. the server works by parsing HTML templates presented 
 5. Type `docker run -p 8080:8080 ascii-art-web-docker` and press `Enter` to run. 
 
 
-#To get the metadata of this docker container, run `docker inspect ascii-art-web-docker > metadata.json`
-#then open up `metadata.json`
+<h3>To get the metadata of this docker container</h3> 
+
+1. Run `docker inspect ascii-art-web-docker > metadata.json`
+2. Open up `metadata.json`
 
 <h4> Look at the comments in the code for more info</h4>
 <h5> Only standard Go libraries were used </h5>
