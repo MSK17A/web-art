@@ -37,13 +37,19 @@ type RESULT_ASCII_EXPORT struct {
 //* is returns a Bad request error in the case something else rather than "/" is typed
 
 func Handler(w http.ResponseWriter, r *http.Request) {
-
+	fmt.Println(r.URL.Path)
 	switch r.Method {
 	//* if the HTTP method is GET, serve the HTML files in the template directory, otherwise, serve the
 	//* custom HTML for bad requests
 	case "GET":
 		r.ParseForm()
 		path := "../templates" + r.URL.Path
+		_, err := os.Open(path)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			http.ServeFile(w, r, "../templates/pagenotfound.html")
+			return
+		}
 		http.ServeFile(w, r, path)
 	default:
 		w.WriteHeader(http.StatusBadRequest)
