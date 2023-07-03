@@ -1,4 +1,4 @@
-<h1>Ascii-art-web (Dockerized Version)</h1>
+<h1>Ascii-art-web</h1>
 
 <h2>By Abdulrahman khaled (akhaled), Sameer Ahmed (sahmed) and Mohammed Alsammak (malsamma)</h2>
 
@@ -26,24 +26,5 @@ submitted to `/ascii-art`. the server works by parsing HTML templates presented 
 4. `500 Internal Server Error`, for any unhandled errors.
 
 
-
-
-<h2>This version has a Dockerfile that can be used to build and run a containerized image of this project</h2>
-
-<h3>To run ascii-art-web with docker:</h3>
-
-1. Navigate to `/ascii-art-web-dockerize` and open terminal
-2. Ensure the Docker Daemon is running (Docker icon should appear in the top bar).
-3. Type `docker build -t ascii-art-web-docker .` and press `Enter`.
-4. Ensure port 8080 is free by running `sudo fuser -k 8080/tcp`.
-5. Type `docker run -p 8080:8080 ascii-art-web-docker` and press `Enter` to run. 
-
-
-<h3>To get the metadata of this docker container</h3> 
-
-1. Run `docker inspect ascii-art-web-docker > metadata.json`
-2. Open up `metadata.json`
-
 <h4> Look at the comments in the code for more info</h4>
-<h5> Only standard Go libraries were used </h5>
-
+<h5> Only standard golang libraries were used </h5>

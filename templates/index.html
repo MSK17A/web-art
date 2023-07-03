@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=\, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script type="text/javascript" src="script.js"></script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100&display=swap");
@@ -22,23 +24,30 @@
         <!--        <label class="select_color" for="color" style="color:white;"><p style="font-family: sans-serif;">Choose output color:</p></label>-->
         <input class ="newColor" type="color" name="color" value="#ffffff" style="margin-top: -25px;">  
     </div>
-      <textarea placeholder="Enter your text" rows="4" cols="3" name="Text" class="input" required></textarea>
+      <textarea id="textarea" placeholder="Enter your text" rows="4" cols="3" name="Text" class="input" required></textarea>
       <div class="bannerform">
         <div class="radios">
-          <input type="radio" id="Bannerstan" value="standard" name="Banner" required />
+          <input type="radio" id="Banner" value="standard" name="Banner" required />
           <label for="Bannerstan" class="Label">Standard</label>
-          <input type="radio" id="Bannershadow" value="shadow" name="Banner" />
+          <input type="radio" id="Banner" value="shadow" name="Banner" required/>
           <label for="bannershadow" class="Label">Shadow</label>
-          <input type="radio" id="Bannerthink" value="thinkertoy" name="Banner" />
+          <input type="radio" id="Banner" value="thinkertoy" name="Banner" required/>
           <label for="Bannerthink" class="Label" class="Label">Thinkertoy</label>
         </div>
       </div>
-    <button class="SubmitBtn" onclick="loadDoc()">Generate Ascii</button>
+    <button id ="SubmitBtn" class="SubmitBtn" onclick="validateForm()">Generate Ascii</button>
   </div>
   </div>
-  <div class="result">
-    <pre id="art"></pre>
+  <div>
+    <div id="result" class="result">
+      <pre id="art"></pre>
+    <div>
+      <button id="btndown" class="btndown" value="Download" onclick="Downloadfile()"><i class="fa fa-download"></i>Download</button>
+      <script>
+        document.querySelector('#btndown').disabled = true;
+      </script>
+    </div>
+    </div>
   </div>
 </body>
-
 </html>

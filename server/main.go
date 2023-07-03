@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"webart"
@@ -12,9 +13,10 @@ will the server actually start listening and serving
 */
 
 func main() {
-	http.HandleFunc("/", webart.Handler)                //* listens for the "/" append to the localhost URL and and handles is using the webart.Handler function
-	http.HandleFunc("/ascii-art", webart.Gen_ASCII)     //* listens for the "/ascii-art" append to the localhost URL and and handles is using the webart.ascii-art function
-	http.Handle("/favicon.ico", http.NotFoundHandler()) //* gives a simple request handler that replies with a “404 page not found” reply.
+	http.HandleFunc("/", webart.Handler)             //* listens for the "/" append to the localhost URL and and handles is using the webart.Handler function
+	http.HandleFunc("/export.txt", webart.ExportHandler) //* listens for the "/export" append to the localhost URL and and handles is using the webart.ExportHandler function
+	http.HandleFunc("/ascii-art", webart.Gen_ASCII)  //* listens for the "/ascii-art" append to the localhost URL and and handles is using the webart.Gen_ASCII function
+	fmt.Println("Server runing on port 8080, goto localhost:8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal(err) //* logging any errors in the terminal
