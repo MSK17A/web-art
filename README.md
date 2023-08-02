@@ -1,6 +1,6 @@
 <h1>Ascii-art-web</h1>
 
-<h2>By Abdulrahman khaled (akhaled), Sameer Ahmed (sahmed) and Mohammed Alsammak (malsamma)</h2>
+<h2>By Abdulrahman khaled, Sameer Ahmed and Mohammed Alsammak</h2>
 
 <h3>Usage</h3>
 
